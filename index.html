@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <style>
+        #acertou{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 70px;
+            font-family: fantasy;
+            color: #00d6e6;
+        }
+        .principal{
+            position: absolute;
+            background-color: #00d6e6;
+            padding: 20px 8px 8px;
+            margin-top: 120px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+            font-size: 50px;
+            font-family: fantasy;
+            color: #ececec; 
+        }
+        .highlights-item{
+            position: absolute;
+            margin-top: 210px;
+            margin-left: 50%;
+            transform: translateX(-50%);          
+        }
+        .highlights-button:hover {
+            border: 1px solid #ececec;
+            background-color: rgb(0, 174, 255);
+        }
+        .texto{
+            
+            font-size:30px;
+            font-family: Fantasy;
+            color: rgb(0, 174, 255);
+        }
+        .caixa {
+            display: inline-block;
+            padding: 10px 0px 8px;
+            position: absolute;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+            border: 1px solid rgb(23, 0, 105);
+            background-color: #7bffed;
+            -webkit-transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+            transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+            font-family: Fantasy;    
+            text-align: center;     
+        }
+        ::-webkit-input-placeholder {
+             color: rgb(40, 54, 255);
+        }
+        .highlights-button {
+            display: inline-block;
+            padding: 12px 15px 8px;
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 1px solid rgb(23, 0, 105);
+            background-color: #00d6e6;
+            -webkit-transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+            transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+            color: #001aff;
+            font-family: Fantasy;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="geral">
+        <div class = "principal">
+            Descubra o número
+        </div>
+        <div class="highlights">    
+            <div class="highlights-item">
+                <p class="texto">Escolha um número de 1 a 100</p>
+                <input class="caixa" type="text" name="Numero" value="" id="num" placeholder="Digite o número" /> 
+                <label class="highlights-button" for="modal-chaves" id="button">Confirmar número</label>
+            </div>    
+        </div>
+    </div>
+    
+    <script>
+        let $numero = document.querySelector('#num')
+        function selecionarNumero(){
+            return Math.floor(Math.random() * 100)
+        }
+        let $numeroAleatorio = selecionarNumero()
+        let $button = document.querySelector('#button').addEventListener('click', () => {
+            if($numero.value<$numeroAleatorio){
+                var texto1 = document.querySelector('.texto')
+                texto1.innerHTML = 'O numero é maior'
+            } else if($numero.value>$numeroAleatorio){
+                var texto1 = document.querySelector('.texto')
+                texto1.innerHTML = 'O numero é menor'
+            } else if($numero.value==$numeroAleatorio){
+                const final = document.querySelector('#geral')  
+                final.innerHTML = '<div id="acertou">Você acertou</div>' 
+            }
+            $numero.value=""
+        })
+
+    </script>
+
+</body>
+
+</html>
