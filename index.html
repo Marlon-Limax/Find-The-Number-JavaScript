@@ -84,36 +84,36 @@
 
 <body>
     <div id="geral">
-        <div class = "main">
-            Find the number
+        <div class = "principal">
+            Descubra o número
         </div>
         <div class="highlights">    
             <div class="highlights-item">
-                <p class="text">Choose a number from 1 to 100</p>
-                <input class="caixa" type="text" name="Number" value="" id="num" placeholder="Enter a number" /> 
-                <label class="highlights-button" for="modal-chaves" id="button">Confirm number</label>
+                <p class="texto">Escolha um número de 1 a 100</p>
+                <input class="caixa" type="text" name="Numero" value="" id="num" placeholder="Digite o número" /> 
+                <label class="highlights-button" for="modal-chaves" id="button">Confirmar número</label>
             </div>    
         </div>
     </div>
-    
+
     <script>
-        let $number = document.querySelector('#num')
-        function selectNumber(){
+        let $numero = document.querySelector('#num')
+        function selecionarNumero(){
             return Math.floor(Math.random() * 100)
         }
-        let $numberAleatorio = selectNumber()
+        let $numeroAleatorio = selecionarNumero()
         let $button = document.querySelector('#button').addEventListener('click', () => {
-            if($number.value<$numberRandom){
-                var text1 = document.querySelector('.text')
-                text1.innerHTML = 'The number is bigger'
-            } else if($number.value>$numberRandom){
-                var text1 = document.querySelector('.text')
-                text1.innerHTML = 'The number is smaller'
-            } else if($number.value==$numberRandom){
+            if($numero.value<$numeroAleatorio){
+                var texto1 = document.querySelector('.texto')
+                texto1.innerHTML = 'O numero é maior'
+            } else if($numero.value>$numeroAleatorio){
+                var texto1 = document.querySelector('.texto')
+                texto1.innerHTML = 'O numero é menor'
+            } else if($numero.value==$numeroAleatorio){
                 const final = document.querySelector('#geral')  
-                final.innerHTML = '<div id="right">You got it right</div>' 
+                final.innerHTML = '<div id="acertou">Você acertou</div>' 
             }
-            $number.value=""
+            $numero.value=""
         })
 
     </script>
