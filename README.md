@@ -1,2 +1,2 @@
 # Descubra-o-numero
-Jogo criado com a linguagem JavaScript onde o jogador tem que adivinhar um número aleatório.                                              O HTML, CSS e o JavaScript está no mesmo arquivo
+Game created with the JavaScript language where the player has to guess a random number. HTML, CSS and JavaScript are in the same file
