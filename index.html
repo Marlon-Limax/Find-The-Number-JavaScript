@@ -98,17 +98,17 @@
     
     <script>
         let $number = document.querySelector('#num')
-        function selecionarNumber(){
+        function selectNumber(){
             return Math.floor(Math.random() * 100)
         }
         let $numberAleatorio = selectNumber()
         let $button = document.querySelector('#button').addEventListener('click', () => {
             if($number.value<$numberRandom){
-                var texto1 = document.querySelector('.text')
-                texto1.innerHTML = 'The number is bigger'
+                var text1 = document.querySelector('.text')
+                text1.innerHTML = 'The number is bigger'
             } else if($number.value>$numberRandom){
-                var texto1 = document.querySelector('.text')
-                texto1.innerHTML = 'The number is smaller'
+                var text1 = document.querySelector('.text')
+                text1.innerHTML = 'The number is smaller'
             } else if($number.value==$numberRandom){
                 const final = document.querySelector('#geral')  
                 final.innerHTML = '<div id="right">You got it right</div>' 
